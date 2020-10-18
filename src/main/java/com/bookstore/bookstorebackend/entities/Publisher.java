@@ -1,6 +1,6 @@
 package com.bookstore.bookstorebackend.entities;
 
-public enum Publisher {
+public enum  Publisher {
     Harper_Collins("Harper Collins"),
      Penguins("Penguins"),
      St_Pauls_Publication("St Pauls Publication"),

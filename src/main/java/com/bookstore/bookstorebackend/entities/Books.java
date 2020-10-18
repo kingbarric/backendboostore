@@ -13,17 +13,19 @@ public class Books  implements Serializable {
     private String isbn;
     @Column(name = "title")
     private String title;
+    @Enumerated(EnumType.STRING)
     @Column(name = "category")
     private Category category;
-    @Column(name = "author")
-    private String author;
+//    @Column(name = "author")
+//    private String author;
+@Enumerated(EnumType.STRING)
     @Column(name = "publisher")
     private Publisher publisher;
     @Column(name = "price")
     private BigDecimal price;
     @Column(name = "quantity_on_hand")
     private Integer quantityOnHand;
-    @Column(name = "image")
+    @Lob
     private String image;
 
     public Books() {
@@ -34,7 +36,7 @@ public class Books  implements Serializable {
         this.isbn = isbn;
         this.title = title;
         this.category = category;
-        this.author = author;
+
         this.publisher = publisher;
         this.price = price;
         this.quantityOnHand = quantityOnHand;
@@ -65,13 +67,9 @@ public class Books  implements Serializable {
         this.category = category;
     }
 
-    public String getAuthor() {
-        return author;
-    }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+
+
 
     public Publisher getPublisher() {
         return publisher;

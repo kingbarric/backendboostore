@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class SearchObject {
     private String publisher;
     private String category;
-    private BigDecimal lowerPrice;
+    private String lowerPrice;
     private String upperPrice;
 
     public String getPublisher() {
@@ -26,11 +26,11 @@ public class SearchObject {
         this.category = category;
     }
 
-    public BigDecimal getLowerPrice() {
+    public String getLowerPrice() {
         return lowerPrice;
     }
 
-    public void setLowerPrice(BigDecimal lowerPrice) {
+    public void setLowerPrice(String lowerPrice) {
         this.lowerPrice = lowerPrice;
     }
 
@@ -42,5 +42,13 @@ public class SearchObject {
         this.upperPrice = upperPrice;
     }
 
-
+    @Override
+    public String toString() {
+        return "SearchObject{" +
+                "publisher='" + publisher + '\'' +
+                ", category='" + category + '\'' +
+                ", lowerPrice='" + lowerPrice + '\'' +
+                ", upperPrice='" + upperPrice + '\'' +
+                '}';
+    }
 }
