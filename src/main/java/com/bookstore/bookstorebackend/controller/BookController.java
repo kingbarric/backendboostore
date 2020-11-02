@@ -5,6 +5,7 @@ import com.bookstore.bookstorebackend.entities.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -168,6 +169,7 @@ public class BookController {
     }
 
     @GetMapping(value = "/findbyid/{isbn}")
+    @Transactional
     public Books findById(@PathVariable String isbn){
         return this.booksRepository.findByIsbn(isbn);
     }
