@@ -25,6 +25,7 @@ public class BookController {
     private JdbcTemplate jdbcTemplate;
 
     @PostMapping(value = "/save")
+    @Transactional
     public ResponseEntity save(@RequestBody final BookDto book) {
         System.out.println(book);
         Map m = new HashMap();
@@ -80,6 +81,7 @@ public class BookController {
     }
 
     @PutMapping(value = "/update")
+    @Transactional
     public ResponseEntity update(@RequestBody final BookDto book) {
         System.out.println(book);
         Map m = new HashMap();
